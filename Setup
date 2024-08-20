@@ -1,0 +1,6 @@
+After accessing the instance named "ansible-server"
+run
+
+[ec2-user@ip-172-31-4-43 ~]$ sudo su
+[root@ip-172-31-4-43 ec2-user]# wget https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
+This will install extra packages for enterprise linux onto your machine.
