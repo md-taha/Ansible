@@ -1,6 +1,24 @@
 After accessing the instance named "ansible-server"
 run
 
+[ec2-user@ip-172-31-4-43 ~]$ sudo amazon-linux-extras install epel -y
 [ec2-user@ip-172-31-4-43 ~]$ sudo su
 [root@ip-172-31-4-43 ec2-user]# wget https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
 This will install extra packages for enterprise linux onto your machine.
+
+[root@ip-172-31-4-43 ec2-user]# yum install epel-release-latest-8.noarch.rpm -y
+[root@ip-172-31-10-225 ec2-user]# yum install git python python-level python-pip openssl ansible -y
+[root@ip-172-31-10-225 ec2-user]# ansible --version
+
+OUTPUT
+ansible 2.9.27
+  config file = /etc/ansible/ansible.cfg
+  configured module search path = [u'/root/.ansible/plugins/modules', u'/usr/share/ansible/plugins/modules']
+  ansible python module location = /usr/lib/python2.7/site-packages/ansible
+  executable location = /bin/ansible
+  python version = 2.7.18 (default, Dec 18 2023, 22:08:43) [GCC 7.3.1 20180712 (Red Hat 7.3.1-17)]
+
+
+
+
+
