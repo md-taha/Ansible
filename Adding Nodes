@@ -1,0 +1,52 @@
+[ansible@ip]$ vi /etc/ansible/hosts
+
+Then add this code snippet after this line.
+# Ex 1: Ungrouped hosts, specify before any group headers.
+
+[demo]
+172.31.5.179
+172.31.0.230
+
+Exit this file.
+
+This file will only work after updating ansible cfg file.
+[ansible@ip]$ vi /etc/ansible/ansible.cfg
+
+Umcomment
+#inventory = /etc/ansible/hosts
+#sudo-user = root
+
+Exit this file.
+
+Now create one user in all the instances 
+[root@ip ec2-user]# adduser ansible
+[root@ip ec2-user]# passwd ansible
+then add any password.
+
+[root@ip ec2-user]# su - ansible
+[ansible@ip]$ exit
+
+Now we've to give sudo privleges to this user
+
+[root@ip ec2-user]# visudo
+
+Add after "root ALL=(ALL)   ALL"
+ansible ALL=(ALL) NOPASSWD: ALL
+
+Then exit this file.
+Now do these same steps in all the nodes too.
+
+Now we've to establish connection between ansible server and nodes.
+
+For this we've to make some changes to sshd-config file.
+
+[root@ip ec2-user]# vi /etc/ssh/sshd-config
+
+Now do some changes required and exit.
+
+
+[root@ip ec2-user]# su - ansible
+[ansible@ip]$ ssh private_ip_of_node1
+Now enter password and you'll get access of Node 1.
+
+
