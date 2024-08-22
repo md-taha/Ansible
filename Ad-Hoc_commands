@@ -1,0 +1,9 @@
+[ansible@ip]$ ansible demo -a "ls"
+[ansible@ip]$ ansible demo[0] -a "touch filez"
+[ansible@ip]$ ansible all -a "touch file4"
+[ansible@ip]$ ansible demo -a "ls -al"
+[ansible@ip]$ ansible demo -a "sudo yum install httpd -y"
+                  OR
+[ansible@ip]$ ansible demo -ba "yum install httpd -y"
+
+[ansible@ip]$ ansible demo -ba "yum remove httpd -y"
